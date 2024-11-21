@@ -10,6 +10,23 @@ const ACCESS_TOKEN = 'EAAIaRHn9pp0BOxpURKBmJpaCZBpUfTljjrp3Jwv9P8jkDsvHdNPIvDd8S
 
 app.use(bodyParser.json());
 
+app.get("/webhook", (req, res) => {
+    const VERIFY_TOKEN = "rashadganteng";
+
+    // Parse the query params
+    const mode = req.query["hub.mode"];
+    const token = req.query["hub.verify_token"];
+    const challenge = req.query["hub.challenge"];
+
+    // Verify the token and respond to the challenge
+    if (mode === "subscribe" && token === VERIFY_TOKEN) {
+        console.log("Webhook verified");
+        res.status(200).send(challenge);
+    } else {
+        res.status(403).send("Forbidden");
+    }
+});
+
 // Endpoint to send messages to WhatsApp
 app.post('/send-message', async (req, res) => {
     const { to, message } = req.body;
