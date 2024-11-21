@@ -5,8 +5,8 @@ const axios = require('axios');
 const app = express();
 const PORT = 3000;
 
-const WHATSAPP_API_URL = 'https://graph.facebook.com/v15.0/YOUR_PHONE_NUMBER_ID/messages';
-const ACCESS_TOKEN = 'YOUR_ACCESS_TOKEN';
+const WHATSAPP_API_URL = 'https://graph.facebook.com/v15.0/507894249067656/messages';
+const ACCESS_TOKEN = 'EAAIaRHn9pp0BOxpURKBmJpaCZBpUfTljjrp3Jwv9P8jkDsvHdNPIvDd8SOsAIQCZCyJ8Wuwz83gcdJZBqoHZCXId6zgp1oJkCgSdeDHlZCAUf4JAam9yfAnwX1UZByZC8Ic3s4FncArxQGVjK6Uix9ZC6nlzsLOaLPZBawU8SqZCpJ9neKvZArXW2mgbuXJpoP5vSekDFupooiKdAL6WEz48fxNh9CfAogEPYg6xJgJ';
 
 app.use(bodyParser.json());
 
